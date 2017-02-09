@@ -19,7 +19,13 @@ namespace TextValidator {
 
 		[TestMethod]
 		public void NumbersOnly() {
-			throw new NotImplementedException();
+			Assert.IsTrue(Valid.Number("1"));
+			Assert.IsTrue(Valid.Number("23"));
+			Assert.IsTrue(Valid.Number("456"));
+
+			Assert.IsFalse(Valid.Number("one"));
+			Assert.IsFalse(Valid.Number("1one"));
+			Assert.IsFalse(Valid.Number("5k"));
 		}
 	}
 }
